@@ -45,3 +45,8 @@ argumentum*
 
 # Don't add the main executable to git
 main
+
+# --- Below are the ignored files set by the assigned project group ---
+
+# The extracted raw data (ignored to reduce redundancies)
+/data/raw
