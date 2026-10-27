@@ -1,30 +1,22 @@
-// This changelog follows GNU Style <https://www.gnu.org/prep/standards/html_node/Style-of-Change-Logs.html>
-// But you can delete the content if this file and pick any other standard
-// NOTE: copying git log over this file is NOT a ChangeLog! See this: <https://www.gnu.org/prep/standards/html_node/Change-Logs.html>
-// Changelog is a summary of a lot of related commits.
+2026-10-26  Tonino Cosentino  <tonino.cosentino@gmx.de>
 
-# Template: 
+	Analysis of cold days per year in Uppsala 1722-2022
 
-YYYY-MM-DD Name LastName  <email@somewhere>
+	* macros/coldDays.C: New ROOT macro. Counts the days with a daily
+	mean temperature below 0 C per year, fits a straight line and draws
+	a 31-year moving average. The plot is saved in figures/coldDays.png.
 
-	High Level description of work done
+2026-10-23  Tonino Cosentino  <tonino.cosentino@gmx.de>
 
-	* Fine grained description of important things that you want to communicate
-	* Fine grained description of important things that you want to communicate
+	Cleaning of the Uppsala 1722-2022 dataset
 
+	* scripts/clean_data.sh: Remove the Windows line endings from
+	uppsala_tm_1722-2022.dat and check for implausible values.
 
-# Example (entries from newest to oldest):
+2026-10-22  Tonino Cosentino  <tonino.cosentino@gmx.de>
 
-2025-09-26 Florido Paganelli  <florido.paganelli@fysik.lu.se>
+	Fix of the SMHI data cleaning script
 
-	Reviewing content of project template
-
-	* Added ChangeLog.txt with comments and examples
-
-2025-09-25 Florido Paganelli  <florido.paganelli@fysik.lu.se>
-
-	Reviewing content of project template
-
-	* Checking directory structure
-	* Added Workplan.md
-
+	* scripts/clean_data.sh: Find the "Datum" header line in every file
+	instead of skipping a fixed number of lines. Extract datasets.tgz,
+	create the output folders and add a plausibility check (-55 to +40 C).
