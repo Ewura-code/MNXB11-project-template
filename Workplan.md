@@ -7,5 +7,5 @@ Team members: Lok Wu Aleka Sun, Ewura Abena Coker, Thalena Gundersen (release ma
 
 - Tonino Carlo Cosentino: cold days per year in Uppsala 1723-2022 (macros/coldDays.C), fixes for the data cleaning script
 - Thalena Gundersen:
-- Lok Wu Aleka Sun:
+- Lok Wu Aleka Sun: mean temperature per year in uppsala 1723-2022 (macros/MeanAnnualTemp.C)
 - Ewura Abena Coker:
