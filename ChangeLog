@@ -1,3 +1,32 @@
+2026-10-29  Thalena Gundersen  <thalena1234@gmail.com>
+
+	Annual warm-day frequency analysis in Uppsala for 1722-2022
+
+	* Developed macros/WarmDays.C, a C++ ROOT macro analysing the annual frequency of warm days (urban-corrected mean temperature of at least 20C) in Uppsala between 1722 and 2022. 
+	
+	* The macro calculates annual warm-day frequencies as percentages, excludes years with fewer than 330 observations, and computes a trailing 30-year moving average requiring at least 27 valid years per window. It generates a combined graph exported in PNG and PDF formats. 
+
+2026-10-29  Thalena Gundersen  <thalena1234@gmail.com>
+
+	Uppsala preprocessing compatibility improvements
+
+	* Following discussion with team members, revised the Uppsala preprocessing section to generate two separate output files:
+
+		* data/cleaned/uppsala_tm_1722-2022.dat: unfiltered observations, retained for compatibility with another team member's analysis.
+
+		* data/cleaned/filtered_uppsala_tm_1722-2022.dat: observations originating exclusively from Uppsala (source_id == 1).
+
+	* The preprocessing removes Windows carriage-return characters and reports observation counts and potentially out-of-range temperatures for both datasets.
+
+2026-10-28  Thalena Gundersen  <thalena1234@gmail.com>
+
+	Uppsala source filtering  
+
+	* Extended scripts/clean_data.sh to generate a filtered version of the historical Uppsala temperature dataset. The filtering procedure selects observations with source_id == 1 (column 6), corresponding to measurements originating from Uppsala. 
+	
+	* The filtered dataset was introduced to support analyses restricted to observations from Uppsala, rather than including measurements originating from other locations.
+	
+	
 2026-10-26  Tonino Cosentino  <tonino.cosentino@gmx.de>
 
 	Analysis of cold days per year in Uppsala 1722-2022
@@ -19,7 +48,15 @@
 
 	* scripts/clean_data.sh: Find the "Datum" header line in every file
 	instead of skipping a fixed number of lines. Extract datasets.tgz,
-	create the output folders and add a plausibility check (-55 to +40 C).
+	create the output folders and add a plausibility check (-55 to +40 C). 
+
+2026-10-22  Thalena Gundersen  <thalena1234@gmail.com>
+
+	Add initial SHMI preprocessing script
+
+	* Developed the intiial Bash preprocessing script (scripts/clean_data.sh) for preparing SHMI temperature datasets for shared use. 
+	
+	* The script processed the station CSV files extracted from the data archive that were saved into data/raw, skipped the first 10 header lines of each file, and saved the resulting files in data/cleaned.
 
 2026-10-29  Ewucok  
 
