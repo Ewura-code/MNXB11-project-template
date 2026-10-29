@@ -20,7 +20,7 @@ with open(input_file, 'r') as f:
             except ValueError:
                 continue
 
-# Write out in Uppsala .dat format: Year Month Day MeanTemp MeanTemp SourceID
+# Write out in .dat format: Year Month Day MeanTemp MeanTemp SourceID
 with open(output_file, 'w') as f:
     for (year, month, day), temps in sorted(daily_temps.items()):
         if temps:
