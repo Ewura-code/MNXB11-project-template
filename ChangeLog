@@ -20,3 +20,16 @@
 	* scripts/clean_data.sh: Find the "Datum" header line in every file
 	instead of skipping a fixed number of lines. Extract datasets.tgz,
 	create the output folders and add a plausibility check (-55 to +40 C).
+
+2026-10-29  Ewucok  
+
+	* Data Preprocessing: Cleaned the data and executed a Python utility script to convert raw SMHI Lund CSV data into the required space-separated daily-mean .dat format.
+
+	* ROOT Macro (`macros/MeanAnnualTempLund.C`): 
+	  - New ROOT macro. 
+	  - Calculates annual mean temperatures
+	  - Integrated a 30-year moving average graph (`TGraph`) and multi-period 
+	    linear trend fits (`TF1`).
+	  - Polished figure visualization by refining the y-axis range (4.5 to 12.5) 
+	    and positioning a custom `TLegend` in the top-right corner to ensure a 
+	    clean, report-ready presentation and saved in the figures folder.
