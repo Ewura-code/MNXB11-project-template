@@ -26,9 +26,11 @@ do
 done
 
 # Uppsala file has Windows line endings
+# Retains only measurements obtained from Uppsala (Source ID #1)
 uppsala="uppsala_tm_1722-2022.dat"
 echo "Processing: $uppsala"
-tr -d '\r' < "$input_dir/$uppsala" > "$output_dir/$uppsala"
+tr -d '\r' < "$input_dir/$uppsala" |
+    awk '$6 == 1' > "$output_dir/$uppsala"
 
 lines=$(wc -l < "$output_dir/$uppsala")
 bad=$(awk '$4 < -55 || $4 > 40 || $5 < -55 || $5 > 40' "$output_dir/$uppsala" | wc -l)
