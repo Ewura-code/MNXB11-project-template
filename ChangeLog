@@ -33,3 +33,15 @@
 	  - Polished figure visualization by refining the y-axis range (4.5 to 12.5) 
 	    and positioning a custom `TLegend` in the top-right corner to ensure a 
 	    clean, report-ready presentation and saved in the figures folder.
+
+2026-11-9 Ewucok
+
+	*Added
+	 - Data Completeness Threshold: Implemented a filtering criterion (minDays = 330) in   		MeanAnnualTempLundClean.C to remove years with incomplete seasonal coverage (specifically excluding sparse years like 1957–1960).
+	 - Decadal Slope Reporting: Added stdout logging to compute and print temperature warming rates per decade for all three fit periods directly from TF1 fit parameters.
+	 - Excluded Year Auditing: Added console listing for skipped years failing the threshold check.
+	 
+	*Changed
+	 - Data Representation: Transitioned from a histogram (TH1D) to a TGraph (ALP draw mode) for annual mean temperatures. This eliminates zero/sentinel dips in the time series when years are missing.
+	 - Fit Boundary Calibration: Adjusted the upper boundary of the modern linear fit (f3) from 2022 to 2007 to align with the termination point of the 30-year moving average window (2022 - 15).
+	 - Legend & Plot Styling: Updated the legend to explicitly list individual fit intervals (1795-1850, 1850-1970, 1970-2007) alongside the moving average and daily scatter/line points. Set vertical axis boundaries to (4.5, 12.5) for consistent visual comparison
