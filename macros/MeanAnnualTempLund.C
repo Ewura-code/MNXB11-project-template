@@ -74,7 +74,7 @@ void MeanAnnualTempLund(){
     TF1* f2 = new TF1("f2", "pol1", 1850, 1970);
     TF1* f3 = new TF1("f3", "pol1", 1970, endYear);
    
-    h1->SetFillColor(kBlue - 9);
+    //h1->SetFillColor(kBlue - 9);
     h1->SetLineColor(kBlue + 2);
     g1->SetLineWidth(3);
     g1->SetLineColor(kBlack);

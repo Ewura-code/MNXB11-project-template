@@ -1,3 +1,7 @@
+2026-10-28  Aleka Sun  <alekasunlokwu@gmail.com>
+
+	Saved MeanAnnualTemp.png to figures/
+
 2026-10-29  Thalena Gundersen  <thalena1234@gmail.com>
 
 	Annual warm-day frequency analysis in Uppsala for 1722-2022
@@ -20,7 +24,15 @@
 
 	* Extended scripts/clean_data.sh to generate a filtered version of the historical Uppsala temperature dataset. The filtering procedure selects observations with source_id == 1 (column 6), corresponding to measurements originating from Uppsala. 
 	* The filtered dataset was introduced to support analyses restricted to observations from Uppsala, rather than including measurements originating from other locations.
+
+2026-10-28  Aleka Sun  <alekasunlokwu@gmail.com>
 	
+	Analysis of mean annual temperature in uppsala 1723-2022 & filled in workplan
+
+	*macros/MeanAnnualTemp.C calculates and plots the mean annual temperature in uppsala in a histogram.
+	the moving average uses a 30-year average temperature and is plotted in a graph on the same canvas.
+	3 best fit lines are created for different sections of the graph. 
+
 2026-10-26  Tonino Cosentino  <tonino.cosentino@gmx.de>
 
 	Analysis of cold days per year in Uppsala 1722-2022
