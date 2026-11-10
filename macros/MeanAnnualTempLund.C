@@ -112,3 +112,4 @@ void MeanAnnualTempLund(){
     legend->Draw();
 
 }
+// MeanAnnualTempLundClean();
